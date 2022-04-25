@@ -22,6 +22,15 @@ public class MainActivity extends AppCompatActivity {
 
 //        https://qa-id.uaepass.ae/trustedx-authservicer/oauth/man-as?redirect_url=https://stage.services.govenment.net.ae/business&client_id=sandbox_stage&state&response_type=code&scode=urn:uaeLdigitalIsd.profile&acr_values=urn:safelayentws.policies.authentication.eveblow&url_locales=en%27
 
+        Uri uri = getIntent().getData();
+
+        if(uri!=null){
+            String path = uri.toString();
+            String mapname = uri.getQueryParameter("mapname");
+            Toast.makeText(this, "back data "+mapname, Toast.LENGTH_SHORT).show();
+
+        }
+
         btnOpenReceiver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
