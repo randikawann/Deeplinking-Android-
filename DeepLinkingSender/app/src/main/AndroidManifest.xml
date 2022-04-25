@@ -18,9 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        receiving back data-->
         <receiver
-            android:name="com.example.application.ReferrerReceiver"
+            android:name="com.rancreation.deeplinkingsender.ReferrerReceiver"
             android:exported="true">
             <intent-filter>
                 <action
