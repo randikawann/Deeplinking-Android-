@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
         if(uri!=null){
             String path = uri.toString();
-            String mapname = uri.getQueryParameter("mapname");
-            Toast.makeText(this, "back data "+mapname, Toast.LENGTH_SHORT).show();
+            String authcode = uri.getQueryParameter("authcode");
+            Toast.makeText(this, "back data "+authcode, Toast.LENGTH_SHORT).show();
 
         }
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = getPackageManager().getLaunchIntentForPackage("com.rancreation.deeplinkingreceiver");
                 if (intent != null) {
-                    Intent dfv = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com?mapname=30"));
+                    Intent dfv = new Intent(Intent.ACTION_VIEW, Uri.parse("uaepassstg://authorisation?clientId=user1"));
                     startActivity(dfv);
 
 

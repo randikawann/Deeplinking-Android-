@@ -25,21 +25,8 @@ public class MainActivity extends AppCompatActivity {
         btnbacksend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = getPackageManager().getLaunchIntentForPackage("com.rancreation.deeplinkingreceiver");
-                if (intent != null) {
-                    Intent dfv = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com?mapname=50"));
-                    startActivity(dfv);
-
-
-
-                } else {
-                    Toast.makeText(MainActivity.this, "Application not available", Toast.LENGTH_SHORT).show();
-//            // Bring user to the market or let them choose an app?
-//            intent = new Intent(Intent.ACTION_VIEW);
-//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            intent.setData(Uri.parse("market://details?id=" + "ae.uaepass.mainapp.stg"));
-//            startActivity(intent);
-                }
+                Intent dfv = new Intent(Intent.ACTION_VIEW, Uri.parse("duapp://authorisation?authcode=abcdef"));
+                startActivity(dfv);
             }
         });
 
@@ -48,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(uri!=null){
             String path = uri.toString();
-            String mapname = uri.getQueryParameter("mapname");
+            String mapname = uri.getQueryParameter("clientId");
             tvText.setText(mapname);
 
         }
