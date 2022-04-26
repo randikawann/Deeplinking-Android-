@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/btnOpenReceiver"
-        android:text="open receiver"
+        android:text="Handle activity"
         android:gravity="center"
         android:layout_width="200dp"
         android:layout_height="50dp"/>

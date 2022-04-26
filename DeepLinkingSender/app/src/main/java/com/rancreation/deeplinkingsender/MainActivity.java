@@ -34,21 +34,7 @@ public class MainActivity extends AppCompatActivity {
         btnOpenReceiver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = getPackageManager().getLaunchIntentForPackage("com.rancreation.deeplinkingreceiver");
-                if (intent != null) {
-                    Intent dfv = new Intent(Intent.ACTION_VIEW, Uri.parse("uaepassstg://authorisation?clientId=user1"));
-                    startActivity(dfv);
-
-
-
-                } else {
-                    Toast.makeText(MainActivity.this, "Application not available", Toast.LENGTH_SHORT).show();
-//            // Bring user to the market or let them choose an app?
-//            intent = new Intent(Intent.ACTION_VIEW);
-//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            intent.setData(Uri.parse("market://details?id=" + "ae.uaepass.mainapp.stg"));
-//            startActivity(intent);
-                }
+                startActivity(new Intent(MainActivity.this, DataBackActivity.class));
             }
         });
 
